@@ -29,6 +29,7 @@ ft_printf_unsigned(unsigned int ui)
 
 int	main(void)
 {
+	unsigned int	ui = 3;
 	ft_printf_unsigned(ui);
 
 	return (0);
