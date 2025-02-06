@@ -12,24 +12,30 @@
 
 #include <stdarg.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
-char	*ft_utoa(unsigned int ui)
+char	*ft_utoa(unsigned int n);
+
+void	ft_printf_unsigned(unsigned int ui)
 {
-	unsigned int	i;
-	char			*ptr;
+	char	*c;
+	int		i;
+
+	i = 0;
+	c = ft_utoa(ui);
+	if (!c)
+		return ;
+	while (c[i])
+	{
+		write(1, &c[i], 1);
+		i++;
+	}
+	free(c);
 }
-
-ft_printf_unsigned(unsigned int ui)
-{
-	ptr	*c;
-
-	c = char utoa(ui);
-}
-
 int	main(void)
 {
-	unsigned int	ui = 3;
+	unsigned int ui = 3;
 	ft_printf_unsigned(ui);
 
 	return (0);
