@@ -31,12 +31,14 @@ void	ft_printf_unsigned(unsigned int ui)
 		write(1, &c[i], 1);
 		i++;
 	}
+	return (i);
 	free(c);
 }
 int	main(void)
 {
-	unsigned int ui = 3;
+	unsigned int ui = 13;
 	ft_printf_unsigned(ui);
+	printf("%u", ui);
 
 	return (0);
 }
