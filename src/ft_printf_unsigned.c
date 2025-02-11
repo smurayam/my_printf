@@ -17,7 +17,7 @@
 
 char	*ft_utoa(unsigned int n);
 
-void	ft_printf_unsigned(unsigned int ui)
+int	ft_printf_unsigned(unsigned int ui)
 {
 	char	*c;
 	int		i;
@@ -25,7 +25,7 @@ void	ft_printf_unsigned(unsigned int ui)
 	i = 0;
 	c = ft_utoa(ui);
 	if (!c)
-		return ;
+		return (0);
 	while (c[i])
 	{
 		write(1, &c[i], 1);
