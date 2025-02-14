@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_ptr.c                                    :+:      :+:    :+:   */
+/*   ft_printf_percent.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/08 14:22:51 by smurayam          #+#    #+#             */
-/*   Updated: 2025/02/14 11:09:28 by smurayam         ###   ########.fr       */
+/*   Created: 2025/02/14 13:12:50 by smurayam          #+#    #+#             */
+/*   Updated: 2025/02/14 14:09:39 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
- 
-int	ft_printf_ptr(void *ptr)
-{
-	unsigned long	ptr_inside;
-	int				i;
 
-	ptr_inside = &ptr;
-	i = 0;
-	while (ptr_inside[i])
-	{
-		write(1, ptr_inside[i], 1);
-		i++;
-	}
-	return (i);
-}
-
-int	main(void)
+int	ft_printf_percent(int *cnt)
 {
-	char *ptr = "waha";
-	ft_printf_ptr(ptr);
-	printf("%p", ptr);
-	return (0);
+	int cnt;
+	cnt = 0;
+	write(1, "%", 1);
+	cnt++;
 }

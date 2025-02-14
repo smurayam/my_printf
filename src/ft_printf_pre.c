@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 09:13:58 by smurayam          #+#    #+#             */
-/*   Updated: 2025/02/03 16:46:37 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/02/14 14:19:07 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
+			if(*format =='%')
+				ft_printf_percent(&count)//nanikonohkisuu
 			if (*format == 'c')
 				count += ft_printf_char(va_arg(args, int));
 			// va_argは次の引数をかえす

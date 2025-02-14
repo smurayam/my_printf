@@ -37,8 +37,8 @@ int	ft_printf_unsigned(unsigned int ui)
 int	main(void)
 {
 	unsigned int ui = 13;
-	ft_printf_unsigned(ui);
-	printf("%u", ui);
 
+	printf("honke : %u\n", ui);
+	ft_printf_unsigned(ui);
 	return (0);
 }

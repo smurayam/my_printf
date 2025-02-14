@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 19:00:08 by smurayam          #+#    #+#             */
-/*   Updated: 2025/02/08 12:31:00 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/02/14 07:18:36 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	check_digit(unsigned int n)
 		n /= 10;
 		i++;
 	}
+	// printf("%d\n", i);
 	return (i);
 }
 char	*ft_utoa(unsigned int n)
