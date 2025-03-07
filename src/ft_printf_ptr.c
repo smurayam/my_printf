@@ -6,18 +6,24 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 14:22:51 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/07 22:25:07 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/07 23:13:14 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 int	ft_printf_ptr(void *ptr)
 {
 	unsigned long	ptr_inside;
 	int				count;
 
+	if (!ptr) // NULL の場合
+		return (write(1, "(nil)", 5));
+	
+	ptr_inside = (uintptr_t)ptr;
+	
 	ptr_inside = &ptr;
 	count = 0;
 	write(1, "0x", 2);
