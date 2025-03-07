@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 19:21:31 by smurayam          #+#    #+#             */
-/*   Updated: 2025/02/02 23:12:10 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/07 20:46:30 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 int	ft_printf_char(int c)
 {
 	char	ch;
+	int		ret;
 
 	ch = c;
-	write(1, &ch, 1);
+	ret = write(1, &ch, 1);
+	return (ret);
 }
 
 int	main(void)

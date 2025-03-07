@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:19:55 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/04 18:50:21 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/07 22:30:40 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	print_hex(unsigned int num)
 	char	hex_digit;
 	int		remainder;
 
-	if (num >= 10)
+	if (num >= 16)
 		print_hex(num / 16);
 	remainder = num % 16;
 	hex_digit = HEX_BASE[remainder];
