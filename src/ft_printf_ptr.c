@@ -6,13 +6,13 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 14:22:51 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/07 23:13:14 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/09 23:38:56 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int	ft_printf_ptr(void *ptr)
 {
@@ -21,27 +21,24 @@ int	ft_printf_ptr(void *ptr)
 
 	if (!ptr) // NULL の場合
 		return (write(1, "(nil)", 5));
-	
-	ptr_inside = (uintptr_t)ptr;
-	
-	ptr_inside = &ptr;
+	ptr_inside = (unsigned long)ptr;
 	count = 0;
-	write(1, "0x", 2);
-	while(ptr_inside[count] = 0)
-	{
-		print_hex(ptr);
-		count++;
-	}
+	count += write(1, "0x", 2);
+	count += print_hex(ptr_inside);
+	return (count);
 }
 
 int	main(void)
 {
-	void	*ptr;
+	char	*ptr;
 
 	ptr = 'a';
 	ft_printf_ptr(ptr);
 	return (0);
 }
+
+// uintptr_p narumonogaarurasii
+
 // int	ft_printf_ptr(void *ptr)
 // {
 // 	unsigned long	ptr_inside;

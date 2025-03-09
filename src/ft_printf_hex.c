@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:19:55 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/07 23:10:59 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/09 23:39:32 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	print_hex(unsigned int num)
 	write(1, &hex_digit, 1);
 }
 
-int	main(void)
-{
-	print_hex(42);
-	return (0);
-}
+// int	main(void)
+// {
+// 	print_hex(42);
+// 	return (0);
+// }
