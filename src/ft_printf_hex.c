@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:19:55 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/09 23:39:32 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:26:23 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,17 @@
 // }
 #define HEX_BASE "0123456789abcdef"
 
-void	print_hex(unsigned int num)
+int	print_hex(unsigned int num)
 {
 	char	hex_digit;
-	int		remainder;
+	int		reminder;
 
 	if (num >= 16)
 		print_hex(num / 16);
-	remainder = num % 16;
-	hex_digit = HEX_BASE[remainder];
-	write(1, &hex_digit, 1);
+	reminder = num % 16;
+	hex_digit = HEX_BASE[reminder];
+	reminder += write(1, &hex_digit, 1);
+	return (reminder);
 }
 
 // int	main(void)

@@ -6,13 +6,15 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 14:22:51 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/09 23:38:56 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/11 20:22:50 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+int	print_hex(unsigned int num);
 
 int	ft_printf_ptr(void *ptr)
 {
@@ -30,9 +32,9 @@ int	ft_printf_ptr(void *ptr)
 
 int	main(void)
 {
-	char	*ptr;
+	void	*ptr;
 
-	ptr = 'a';
+	ptr = "auch";
 	ft_printf_ptr(ptr);
 	return (0);
 }
