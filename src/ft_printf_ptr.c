@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 14:22:51 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/11 20:22:50 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/13 22:33:08 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ int	ft_printf_ptr(void *ptr)
 	return (count);
 }
 
-int	main(void)
-{
-	void	*ptr;
+// int	main(void)
+// {
+// 	void	*ptr;
 
-	ptr = "auch";
-	ft_printf_ptr(ptr);
-	return (0);
-}
+// 	ptr = "auch";
+// 	ft_printf_ptr(ptr);
+// 	return (0);
+// }
 
 // uintptr_p narumonogaarurasii
 

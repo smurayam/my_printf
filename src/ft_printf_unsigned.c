@@ -34,11 +34,11 @@ int	ft_printf_unsigned(unsigned int ui)
 	return (i);
 	free(c);
 }
-int	main(void)
-{
-	unsigned int ui = 13;
+// int	main(void)
+// {
+// 	unsigned int ui = 13;
 
-	printf("honke : %u\n", ui);
-	ft_printf_unsigned(ui);
-	return (0);
-}
+// 	printf("honke : %u\n", ui);
+// 	ft_printf_unsigned(ui);
+// 	return (0);
+// }

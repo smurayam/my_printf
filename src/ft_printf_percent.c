@@ -6,16 +6,14 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:12:50 by smurayam          #+#    #+#             */
-/*   Updated: 2025/02/14 14:09:39 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/13 22:53:26 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_printf_percent(int *cnt)
+int	ft_printf_percent(void)
 {
-	int cnt;
-	cnt = 0;
 	write(1, "%", 1);
-	cnt++;
+	return (1);
 }

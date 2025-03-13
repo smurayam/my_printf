@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 19:21:31 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/07 20:46:30 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/13 22:34:04 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int	ft_printf_char(int c)
 	return (ret);
 }
 
-int	main(void)
-{
-	int c = 'a';
-	ft_printf_char(c);
+// int	main(void)
+// {
+// 	int c = 'a';
+// 	ft_printf_char(c);
 
-	return (0);
-}
+// 	return (0);
+// }
