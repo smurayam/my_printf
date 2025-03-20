@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 00:40:10 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/15 00:14:08 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/19 12:35:18 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 void	ft_itoa_super(int n, char *str);
 
-ssize_t	ft_print_decimal(int n, int fd)
+ssize_t	ft_print_decimal(int n)
 {
 	char	str[12];
 	ssize_t	ret;
 
 	ft_itoa_super(n, str);
-	ret = write(fd, str, ft_strlen(str));
+	ret = write(1, str, ft_strlen(str));
 	return (ret);
 }
 

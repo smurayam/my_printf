@@ -6,14 +6,13 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 19:00:08 by smurayam          #+#    #+#             */
-/*   Updated: 2025/02/14 07:18:36 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/15 08:32:44 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-// 数字からascii putnbr出力だけ違う
 int	check_digit(unsigned int n)
 {
 	int	i;
@@ -24,9 +23,9 @@ int	check_digit(unsigned int n)
 		n /= 10;
 		i++;
 	}
-	// printf("%d\n", i);
 	return (i);
 }
+
 char	*ft_utoa(unsigned int n)
 {
 	int		i;
@@ -45,7 +44,7 @@ char	*ft_utoa(unsigned int n)
 	}
 	return (ptr);
 }
-
+// 数字からascii putnbr出力だけ違う
 // int	main(void)
 // {
 // 	int n = -42;

@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:19:55 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/11 20:26:23 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/15 15:08:53 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,31 @@
 // {
 // 	return (0);
 // }
-#define HEX_BASE "0123456789abcdef"
+#define HEX_LOWER_BASE "0123456789abcdef"
+#define HEX_UPPER_BASE "0123456789ABCDEF"
+#define LOWER 1
+#define UPPER 0
 
-int	print_hex(unsigned int num)
+int	print_hex(unsigned int num, int is_lower)
 {
 	char	hex_digit;
 	int		reminder;
 
 	if (num >= 16)
-		print_hex(num / 16);
+		print_hex(num / 16, is_lower);
 	reminder = num % 16;
-	hex_digit = HEX_BASE[reminder];
+	if (is_lower)
+		hex_digit = HEX_LOWER_BASE[reminder];
+	else
+		hex_digit = HEX_UPPER_BASE[reminder];
 	reminder += write(1, &hex_digit, 1);
 	return (reminder);
 }
 
 // int	main(void)
 // {
-// 	print_hex(42);
+// 	print_hex(42,LOWER);
+// 	write(1,"\n",1);
+// 	print_hex(42,UPPER);
 // 	return (0);
 // }
