@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 20:30:42 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/19 14:20:59 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/21 05:06:06 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	format_identifier(const char *format, va_list args)
 	if (*format == 's')
 		count += ft_printf_str(va_arg(args, char *));
 	if (*format == 'p')
-		count += ft_printf_ptr(va_arg(args, unsigned int));
+		count += ft_printf_ptr(va_arg(args, void *));
 	if (*format == 'd' || *format == 'i')
 		count += ft_print_decimal(va_arg(args, int));
 	if (*format == 'u')
@@ -39,8 +39,9 @@ int	format_identifier(const char *format, va_list args)
 		count += (va_arg(args, unsigned int), UPPER);
 	if (*format == '%')
 		count += ft_printf_percent();
-	else if (*format == 's')
+	if (*format == 's')
 		count += ft_printf_str(va_arg(args, char *));
+	return (count);
 }
 
 int	ft_printf(const char *format, ...)
@@ -53,7 +54,7 @@ int	ft_printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format == '%')
-			count += format_identifier(const char *);
+			count += format_identifier(format, args);
 		else
 			count += write(1, format, 1);
 		format++;
@@ -63,9 +64,9 @@ int	ft_printf(const char *format, ...)
 }
 
 // ifで他の型ぜんぶいれる
-// int	main(void)
-// {
-// 	printf("%s%p\n%x\n%X\n\n", "wa", NULL, 200, 200);
-// 	ft_printf("%s%p\n%x\n%X\n", "wa", NULL, 200, 200);
-// 	return (0);
-// }
+int	main(void)
+{
+	printf("%s%p\n%x\n%X\n\n", "wa", NULL, 200, 200);
+	ft_printf("%s%p\n%x\n%X\n", "wa", NULL, 200, 200);
+	return (0);
+}
