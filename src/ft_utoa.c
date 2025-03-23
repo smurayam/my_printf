@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 19:00:08 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/15 08:32:44 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/24 01:55:56 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	check_digit(unsigned int n)
 	int	i;
 
 	i = 0;
+	if (n == 0)
+		i++;
 	while (n > 0)
 	{
 		n /= 10;

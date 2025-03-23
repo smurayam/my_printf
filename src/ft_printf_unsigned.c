@@ -31,8 +31,8 @@ int	ft_printf_unsigned(unsigned int ui)
 		write(1, &c[i], 1);
 		i++;
 	}
-	return (i);
 	free(c);
+	return (i);
 }
 // int	main(void)
 // {

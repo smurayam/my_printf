@@ -6,11 +6,11 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 20:30:42 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/21 05:06:06 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/24 02:00:22 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -34,13 +34,11 @@ int	format_identifier(const char *format, va_list args)
 	if (*format == 'u')
 		count += ft_printf_unsigned(va_arg(args, unsigned int));
 	if (*format == 'x')
-		count += (va_arg(args, unsigned int), LOWER);
+		count += print_hex(va_arg(args, unsigned int), LOWER);
 	if (*format == 'X')
-		count += (va_arg(args, unsigned int), UPPER);
+		count += print_hex(va_arg(args, unsigned int), UPPER);
 	if (*format == '%')
 		count += ft_printf_percent();
-	if (*format == 's')
-		count += ft_printf_str(va_arg(args, char *));
 	return (count);
 }
 
@@ -54,7 +52,10 @@ int	ft_printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format == '%')
+		{
+			format++;
 			count += format_identifier(format, args);
+		}
 		else
 			count += write(1, format, 1);
 		format++;
@@ -64,9 +65,9 @@ int	ft_printf(const char *format, ...)
 }
 
 // ifで他の型ぜんぶいれる
-int	main(void)
-{
-	printf("%s%p\n%x\n%X\n\n", "wa", NULL, 200, 200);
-	ft_printf("%s%p\n%x\n%X\n", "wa", NULL, 200, 200);
-	return (0);
-}
+// int	main(void)
+// {
+// 	printf("%s%p\n%x\n%X\n\n", "wa", NULL, 200, 200);
+// 	ft_printf("%s%p\n%x\n%X\n", "wa", NULL, 200, 200);
+// 	return (0);
+// }

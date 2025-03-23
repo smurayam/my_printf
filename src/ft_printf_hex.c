@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:19:55 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/15 15:08:53 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/24 01:42:00 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,22 @@
 #define LOWER 1
 #define UPPER 0
 
-int	print_hex(unsigned int num, int is_lower)
+int	print_hex(unsigned long long num, int is_lower)
 {
 	char	hex_digit;
 	int		reminder;
+	int		count;
 
+	count = 0;
 	if (num >= 16)
-		print_hex(num / 16, is_lower);
+		count += print_hex(num / 16, is_lower);
 	reminder = num % 16;
 	if (is_lower)
 		hex_digit = HEX_LOWER_BASE[reminder];
 	else
 		hex_digit = HEX_UPPER_BASE[reminder];
-	reminder += write(1, &hex_digit, 1);
-	return (reminder);
+	count += write(1, &hex_digit, 1);
+	return (count);
 }
 
 // int	main(void)

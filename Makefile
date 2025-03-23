@@ -6,7 +6,7 @@
 #    By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/06 02:48:26 by smurayam          #+#    #+#              #
-#    Updated: 2025/03/21 09:03:11 by smurayam         ###   ########.fr        #
+#    Updated: 2025/03/24 00:49:50 by smurayam         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,13 +20,17 @@ CFLAGS = -Wall -Wextra -Werror
 #s: Create an index of symbols to speed up linking.
 ARS = ar rcs
 
-SRCS = ft_printf.c ft_printf_char.c  ft_printf_decimal.c  ft_printf_hex.c  ft_printf_percent.c  ft_printf_ptr.c  ft_printf_str.c  ft_printf_unsigned.c  ft_utoa.c
+SRCS = ft_printf.c src/ft_printf_char.c src/ft_printf_decimal.c src/ft_printf_hex.c src/ft_printf_percent.c src/ft_printf_ptr.c src/ft_printf_str.c src/ft_printf_unsigned.c src/ft_utoa.c Libft01/ft_strlen.c Libft01/ft_strlcpy.c
+
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(ARS) $(NAME) $(OBJS)
+
+Libft01/libft.a:
+	make -C Libft01
 
 #bonus: $(BONUS_FLAG)
 
@@ -39,13 +43,15 @@ $(NAME): $(OBJS)
 # $<: the first dependency (source .c file).
 # $@: the target file (.o file to be created).
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-Makefileを使用している場合は、すべての必要なソースファイルが含まれていることを確認する。
+	$(CC) $(CFLAGS) -c $< -o $@ -ILibft01
+
 clean:
+	make -C Libft01 clean
 	rm -f $(OBJS) $(BONUS_OBJS)
 	rm -f $(BONUS_FLAG)
 
 fclean: clean
+	make -C Libft01 fclean
 	rm -f $(NAME)
 
 re: fclean all

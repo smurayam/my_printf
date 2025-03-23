@@ -6,7 +6,7 @@
 /*   By: smurayam <smurayam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 14:22:51 by smurayam          #+#    #+#             */
-/*   Updated: 2025/03/15 08:29:53 by smurayam         ###   ########.fr       */
+/*   Updated: 2025/03/24 01:46:07 by smurayam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int	print_hex(unsigned int num);
+int	print_hex(unsigned long long num);
 
 int	ft_printf_ptr(void *ptr)
 {
-	unsigned long	ptr_inside;
-	int				count;
+	unsigned long long	ptr_inside;
+	int					count;
 
 	if (!ptr)
 		return (write(1, "(nil)", 5));
-	ptr_inside = (unsigned long)ptr;
+	ptr_inside = (unsigned long long)ptr;
 	count = 0;
 	count += write(1, "0x", 2);
 	count += print_hex(ptr_inside);
